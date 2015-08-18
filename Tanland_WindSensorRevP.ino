@@ -1,4 +1,7 @@
-/* A demo sketch for the Modern Device Rev P Wind Sensor
+/*Author: Benjamin Low (benjamin.low@digimagic.com.sg)
+* Date: 17 Aug 2015
+* Description: Based on the public domain code by Paul Bagder (dated 2014)
+* for the Modern Device Rev P Wind Sensor
 * Requires a Wind Sensor Rev P from Modern Device
 * http://moderndevice.com/product/wind-sensor-rev-p/
 * 
@@ -12,9 +15,10 @@
 * +10-12V      Vin
 * Out          A0
 * TMP          A2
-*
-* Paul Badger 2014
-* code in the public domain
+* 
+* Adapted for project Tanland in Ayutthaya, Thailand, for the heat wave 
+* installation. Serial writes a byte value 0f 0-255 for the wind sensor. 
+* A higher reading means stronger airflow.
 */
 
 const int OutPin  = A0;   // wind sensor analog pin  hooked up to Wind P sensor "OUT" pin
