@@ -39,7 +39,9 @@ void loop() {
 
         int my_reading = windADunits - 300;
         my_reading = constrain(my_reading, 0, 255);
-    Serial.write(my_reading); //raw reading is 330-500. To keep to within one byte 0-255.
+        
+//    raw reading is 330-500. To keep to within one byte 0-255.
+   Serial.println(my_reading);
     
     // wind formula derived from a wind tunnel data, annemometer and some fancy Excel regressions
     // this scalin doesn't have any temperature correction in it yet
@@ -61,7 +63,10 @@ void loop() {
     float tempC = ((((float)tempRawAD * 5.0) / 1024.0) - 0.400) / .0195; 
 //    Serial.print(tempC);
 //    Serial.println(" C");
-    //delay(10);
+    
+    
+    delay(10);
+    
 }
 
 
