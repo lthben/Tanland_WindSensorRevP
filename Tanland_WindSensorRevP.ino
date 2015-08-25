@@ -38,6 +38,9 @@ void loop() {
 //    Serial.print("\t");
 
         int my_reading = windADunits - 300;
+        if (my_reading < 0) {
+           my_reading = 0; 
+        }
         my_reading = constrain(my_reading, 0, 255);
         
 //    raw reading is 330-500. To keep to within one byte 0-255.
