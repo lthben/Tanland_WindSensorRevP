@@ -33,11 +33,11 @@ void loop() {
 
     // read wind
     int windADunits = analogRead(OutPin);
+    
 //    Serial.print("RW ");   // print raw A/D for debug
-//    Serial.print(windADunits);
-//    Serial.print("\t");
+//    Serial.println(windADunits);
 
-        int my_reading = windADunits - 300;
+        int my_reading = windADunits - 280;
         if (my_reading < 0) {
            my_reading = 0; 
         }
