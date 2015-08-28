@@ -27,11 +27,11 @@ const int TempPin = A2;   // temp sesnsor analog pin hooked up to Wind P sensor 
 
 void setup() {
   Serial.begin(9600);
+  
 }
 
 void loop() {
 
-<<<<<<< HEAD
   // read wind
   int windADunits = analogRead(OutPin);
   //    Serial.print("RW ");   // print raw A/D for debug
@@ -41,28 +41,6 @@ void loop() {
   int my_reading = windADunits - 300;
   my_reading = constrain(my_reading, 0, 255);
   Serial.println(my_reading); //raw reading is 330-500. To keep to within one byte 0-255.
-=======
-    // read wind
-    int windADunits = analogRead(OutPin);
-    
-//    Serial.print("RW ");   // print raw A/D for debug
-//    Serial.println(windADunits);
-
-        int my_reading = windADunits - 280;
-        if (my_reading < 0) {
-           my_reading = 0; 
-        }
-        my_reading = constrain(my_reading, 0, 255);
-        
-//    raw reading is 330-500. To keep to within one byte 0-255.
-   Serial.println(my_reading);
-    
-    // wind formula derived from a wind tunnel data, annemometer and some fancy Excel regressions
-    // this scalin doesn't have any temperature correction in it yet
-    float windMPH =  pow((((float)windADunits - 264.0) / 85.6814), 3.36814);
-//    Serial.print(windMPH);
-//    Serial.print(" MPH\t");    
->>>>>>> origin/master
 
   // wind formula derived from a wind tunnel data, annemometer and some fancy Excel regressions
   // this scalin doesn't have any temperature correction in it yet
@@ -70,7 +48,6 @@ void loop() {
   //    Serial.print(windMPH);
   //    Serial.print(" MPH\t");
 
-<<<<<<< HEAD
 
   // temp routine and print raw and temp C
   int tempRawAD = analogRead(TempPin);
@@ -87,28 +64,6 @@ void loop() {
   //    Serial.println(" C");
 
   delay(50); //need to add delay for the sampling to work
-=======
-    // temp routine and print raw and temp C
-    int tempRawAD = analogRead(TempPin);  
-//    Serial.print("RT ");    // print raw A/D for debug
-//    Serial.print(tempRawAD);
-//    Serial.print("\t");
-    
-    // convert to volts then use formula from datatsheet 
-//    Vout = ( TempC * .0195 ) + .400
-//    tempC = (Vout - V0c) / TC   see the MCP9701 datasheet for V0c and TC
-    
-    float tempC = ((((float)tempRawAD * 5.0) / 1024.0) - 0.400) / .0195; 
-//    Serial.print(tempC);
-//    Serial.println(" C");
-    
-    
-    delay(10);
-    
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
 }
 
 
