@@ -34,9 +34,9 @@ void loop() {
 
   // read wind
   int windADunits = analogRead(OutPin);
-  //    Serial.print("RW ");   // print raw A/D for debug
-  //    Serial.print(windADunits);
-  //    Serial.print("\t");
+//  Serial.print("RW ");   // print raw A/D for debug
+//  Serial.print(windADunits);
+//  Serial.print("\n");
 
   int my_reading = windADunits - 300;
   my_reading = constrain(my_reading, 0, 255);
